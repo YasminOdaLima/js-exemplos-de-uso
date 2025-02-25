@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercício 5: Animação Simples</title>
+  <title>Exercício 5: Animação Simples com JavaScript</title>
   <style>
-    /* Estilo da div que será animada */
-    #myDiv {
+    /* Estilo da div */
+    #animDiv {
       width: 100px;
       height: 100px;
-      background-color: lightgreen;
-      position: relative; /* Permite mover a div com a propriedade 'left' */
+      background-color: lightblue;
+      position: relative;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Botão que inicia a animação -->
-  <button id="myButton">Mover</button>
+  <!-- Botão para iniciar a animação -->
+  <button id="moveButton">Mover</button>
 
-  <!-- Div que será movida ao clicar no botão -->
-  <div id="myDiv"></div>
+  <!-- Div que será animada -->
+  <div id="animDiv"></div>
 
   <!-- Script JavaScript embutido na página -->
   <script>
     // Seleciona o botão e a div pelo ID
-    const button = document.querySelector('#myButton');
-    const div = document.querySelector('#myDiv');
+    const button = document.querySelector('#moveButton');
+    const animDiv = document.querySelector('#animDiv');
 
-    // Variável para controlar a posição da div
-
-    // 1ª Digitação (Aqui)
+    // Variável para armazenar a posição atual da div
+    let position = 0;
 
     // Adiciona um evento de clique ao botão
- 
-      // Aumenta a posição em 50 pixels
-      
-
-      // Move a div para a nova posição
-
+    button.addEventListener('click', function() {
+      // Incrementa a posição em 50 pixels
+      position += 50;
+      // Atualiza a propriedade left da div
+      animDiv.style.left = position + 'px';
+    });
   </script>
 </body>
 </html>

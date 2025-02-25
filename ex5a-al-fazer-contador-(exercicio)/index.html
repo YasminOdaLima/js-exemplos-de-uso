@@ -1,1 +1,61 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5a:Contador de Cliques</title>
+    
+    <!-- Estilos para centralizar o conteúdo e definir cores do contador -->
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #contador {
+            font-size: 2em;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .par {
+            background-color: green;
+            color: white;
+        }
+        .impar {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <!-- Botão que incrementa o contador -->
+    <button onclick="incrementar()">Clique aqui!</button>
+    <!-- Parágrafo que exibe o valor do contador -->
+    <p id="contador" class="par">0</p>
+
+    <!-- Script para controlar o contador de cliques -->
+    <script>
+        // Variável que armazena o valor do contador
+        let contador = 0;
+
+        // Função chamada ao clicar no botão para incrementar o contador
+        function incrementar() {
+            contador++;
+            const paragrafo = document.getElementById('contador');
+            paragrafo.textContent = contador;
+
+            // Verifica se o número é par
+            if (contador % 2 === 0) {
+                paragrafo.classList.add('par');
+                paragrafo.classList.remove('impar');
+            }             
+            // Se não for par, é ímpar
+            else {
+                paragrafo.classList.add('impar');
+                paragrafo.classList.remove('par');
+            }
+        }
+    </script>
+</body>
+</html>
