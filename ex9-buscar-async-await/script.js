@@ -19,7 +19,7 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
 
     // Verifica se a resposta da API foi bem-sucedida (status 200-299)
 
-    // 1ª Digitação (Aqui)
+    
 
     // Converte a resposta para JSON e espera o resultado (await)
     
