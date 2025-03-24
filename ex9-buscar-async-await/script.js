@@ -20,7 +20,7 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
     // Verifica se a resposta da API foi bem-sucedida (status 200-299)
 
     if (!response.ok) {
-      throw new Error ("Erro ao buscar dados do usuário.");
+      throw new Error("Erro ao buscar dados do usuário.");
     }
 
     // Converte a resposta para JSON e espera o resultado (await)
@@ -28,10 +28,10 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
 
     // Exibe os dados do usuário na página
     userDataElement.innerHTML = `
-    <h2>Dados do usuário:</h2>
-    <p><strong>Nome:</strong>${User.name}</p>
-    <p><strong>Email:</strong>${User.email}</p>
-    <p><strong>Telefone:</strong>${User.phone}</p>
+    <h2>Dados do Usuário:</h2>
+    <p><strong>Nome:</strong>${user.name}</p>
+    <p><strong>Email:</strong>${user.email}</p>
+    <p><strong>Telefone:</strong>${user.phone}</p>
 
     `;
 
