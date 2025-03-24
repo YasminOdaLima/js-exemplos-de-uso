@@ -38,21 +38,40 @@
   </style>
 </head>
 <body>
-  <!-- Temporizador -->
   <div id="timer">0</div>
 
-  <!-- Botões de controle -->
   <button id="startButton">Iniciar</button>
   <button id="pauseButton">Pausar</button>
   <button id="resetButton">Resetar</button>
 
-  <!-- Script JavaScript embutido na página -->
   <script>
+    let timer = 0;
+    let interval = null;
 
+    function startTimer() {
+      if (!interval) {
+        interval = setInterval(() => {
+          timer++;
+          document.getElementById("timer").innerText = timer;
+        }, 1000);
+      }
+    }
 
-    // 1ª Digitação (Resolva aqui o exercício)
+    function pauseTimer() {
+      clearInterval(interval);
+      interval = null;
+    }
 
+    function resetTimer() {
+      pauseTimer();
+      timer = 0;
+      document.getElementById("timer").innerText = timer;
+    }
 
+    document.getElementById("startButton").addEventListener("click", startTimer);
+    document.getElementById("pauseButton").addEventListener("click", pauseTimer);
+    document.getElementById("resetButton").addEventListener("click", resetTimer);
   </script>
 </body>
 </html>
+
